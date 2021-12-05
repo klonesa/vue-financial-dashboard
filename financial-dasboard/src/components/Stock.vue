@@ -62,13 +62,15 @@ export default {
       console.log(stock);
       axios
         .get(
-          "https://financialmodelingprep.com/api/v4/company-outlook?symbol=AAPL&apikey=e77bafdd8b20ee59904e279c50368683"
+          // "https://financialmodelingprep.com/api/v4/company-outlook?symbol=AAPL&apikey=e77bafdd8b20ee59904e279c50368683"
+          // "https://financialmodelingprep.com/api/v3/profile/AAPL?apikey=e77bafdd8b20ee59904e279c50368683"
+          `https://financialmodelingprep.com/api/v3/profile/${stock}?apikey=e77bafdd8b20ee59904e279c50368683`
         )
         .then((res) => {
-          this.infoCompany = res.data.profile;
+          this.infoCompany = res.data;//.profile
         })
         .catch((err) => console.log(err));
-      console.log(this.infoCompany);
+         console.log(this.infoCompany);
     },
   },
 };
